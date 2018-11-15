@@ -17,5 +17,8 @@ class Vec3D {
 
 	Vec3D mul( float other ) { return new Vec3D( x*other, y*other, z*other ); }
 	float mul( Vec3D other ) { return x*other.x + y*other.y + z*other.z; }
-
+	
+	float len() { float length = (float)Math.sqrt((x * x) + (y * y) + (z * z)); 	return length; }
+	
+	Vec3D cross( Vec3D other ){ Vec3D vec = new Vec3D(((y * other.z) - (z * other.y)) , ((z * other.x) - (x * other.z)) , ((x * other.y) - (y * other.x))); return vec;}
 }
